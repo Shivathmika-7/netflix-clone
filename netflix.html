@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix Clone</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #141414;
+      color: #fff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background-color: #141414;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #e50914;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      padding: 6px 8px;
+    }
+    nav ul li a:hover {
+      color: #e50914;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/8cc0f775-9300-4a04-8f32-0a84e460d1a0/f5d17757-2683-4606-9f3f-d92a0c354e43/IN-en-20230612-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      padding-left: 50px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .btn-play {
+      background-color: #e50914;
+      border: none;
+      padding: 12px 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-play:hover {
+      background-color: #f40612;
+    }
+
+    /* Content sections */
+    main {
+      flex-grow: 1;
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section.content-row {
+      margin-bottom: 40px;
+    }
+
+    section.content-row h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+
+    .row-posters {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .row-posters img {
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .row-posters img:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #141414;
+      color: #999;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+      margin-top: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .hero {
+        height: 300px;
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NETFLIX</div>
+  <nav>
+    <ul>
+      <li><a href="#trending">Trending</a></li>
+      <li><a href="#toprated">Top Rated</a></li>
+      <li><a href="#originals">Netflix Originals</a></li>
+      <li><a href="#action">Action Movies</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" aria-label="Featured content">
+  <div class="hero-content">
+    <h1>Stranger Things</h1>
+    <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments and supernatural forces.</p>
+    <button class="btn-play">▶ Play</button>
+  </div>
+</section>
+
+<main>
+  <section id="trending" class="content-row" aria-label="Trending movies and shows">
+    <h2>Trending Now</h2>
+    <div class="row-posters">
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/2c568/6c14ee3e9b6ca0b2bf3ec0f6064e9a542072c568.jpg" alt="The Witcher" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/9ca78/2d67910b66b9f6d89f5b92e2f6a2a7754c39ca78.jpg" alt="Money Heist" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/23b65/79e5e6c9b44668d2636e0445f2938dbcd4623b65.jpg" alt="Narcos" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/0516b/491d1bb4a2ec46f7bda99c8543992f3b6c60516b.jpg" alt="13 Reasons Why" />
+    </div>
+  </section>
+
+  <section id="toprated" class="content-row" aria-label="Top rated movies and shows">
+    <h2>Top Rated</h2>
+    <div class="row-posters">
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/f3c2d/3e90cdbdc8a63c34600e7a5b1cc5e0ae18bf3c2d.jpg" alt="Breaking Bad" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/44189/12a4d54fa1d5819ee208c21f7f4a1b20b9044189.jpg" alt="Friends" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/c3e46/22db2b3db857ae2cba3a96cf0f8f4e6f9e9c3e46.jpg" alt="The Crown" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/e0109/b9270c5fdb8523a8ef3ef6aa3dbec1b3640e0109.jpg" alt="Better Call Saul" />
+    </div>
+  </section>
+
+  <section id="originals" class="content-row" aria-label="Netflix Originals">
+    <h2>Netflix Originals</h2>
+    <div class="row-posters">
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/0bbf3/dfc9d14f42f881ec4872d544db95ee6a1830bbf3.jpg" alt="The Umbrella Academy" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/ae0a4/fe7a6c62f70d56ad6c9c2a2e7a1d9cba860ae0a4.jpg" alt="Ozark" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/fac0f/f0c6a9c6f68244ef814b7b015a29fcd61a4fac0f.jpg" alt="The Queen's Gambit" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/10517/ea5033ad88db8e0a8f2f1c5d2292bc4f8410517.jpg" alt="The Witcher" />
+    </div>
+  </section>
+
+  <section id="action" class="content-row" aria-label="Action Movies">
+    <h2>Action Movies</h2>
+    <div class="row-posters">
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/3f2be/62a3bcfc3f92ff3d1b2e2edeb49eebd3d863f2be.jpg" alt="Extraction" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/710e8/0d2460ad7be8b7f715c469f7e3b30e6dbfe710e8.jpg" alt="John Wick" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/20a0b/51b9781a9a8a69f7124cbd2762f1460d2e920a0b.jpg" alt="Mad Max: Fury Road" />
+      <img src="https://occ-0-1723-92.1.nflxso.net/art/154c7/0c5b4eaef3c51f81e0de39329f6e2a35f1154c7.jpg" alt="The Dark Knight" />
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Netflix Clone. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+
